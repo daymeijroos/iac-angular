@@ -1,5 +1,5 @@
 # Web-Shop IPRWC
-By Day
+_By Day_
 
 This is a web-shop school project with Angular.
 
