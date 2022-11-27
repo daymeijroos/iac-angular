@@ -2,6 +2,18 @@
 _By Day_
 
 This is a web-shop school project with Angular.
+It will be a webshop for a virtual architecture agency.
+We sell virtual architecture with a lot of pretty imagery.
+
+## Sources
+- https://www.artstation.com/artwork/nEGP2K
+- https://www.artstation.com/artwork/D5EvQe
+- https://www.artstation.com/artwork/NGR5D5
+- https://www.artstation.com/artwork/KOGax4
+- https://www.artstation.com/artwork/kl6mkl
+- https://www.artstation.com/artwork/wJzX0X
+- https://www.artstation.com/artwork/2qEo2e
+- https://www.artstation.com/artwork/Rn4K0r
 
 ## **Commit Conventions**
 **Feat** or ✨: _Describes a feature_
