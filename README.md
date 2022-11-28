@@ -1,23 +1,40 @@
 # Web-Shop IPRWC
 _By Day_
 
+## Proposal
+
 This is a web-shop school project with Angular.
-It will be a webshop for a virtual architecture agency.
-We sell virtual architecture with a lot of pretty imagery.
+It will be a robot company set in a painted world.
+The industrial giant will be called: **Industrial Automaton Coorporation** or **IAC** for short
 
 ## Sources
-- https://www.artstation.com/artwork/nEGP2K
-- https://www.artstation.com/artwork/D5EvQe
-- https://www.artstation.com/artwork/NGR5D5
-- https://www.artstation.com/artwork/KOGax4
-- https://www.artstation.com/artwork/kl6mkl
-- https://www.artstation.com/artwork/wJzX0X
-- https://www.artstation.com/artwork/2qEo2e
-- https://www.artstation.com/artwork/Rn4K0r
+- https://www.geek-art.net/portfolio-hamish-frater/
+- https://www.artstation.com/hamfish
+  - Source for images
+- https://fonts.google.com/specimen/Alexandria
+  - Main font
+- https://fonts.google.com/specimen/Kanit
+  - For headers
+- https://fonts.google.com/specimen/Unica+One
+  - For product names/decoration
 
-OR
-
-- https://www.lastdodo.nl/nl/areas/2314045-dungan
+## Inspiration
+- https://www.mercedes-benz.com/en/
+- https://www.polestar.com/
+- https://dribbble.com/shots/10859866-anime-website-landing-page-idea
+  - For the decorative text
+- https://dribbble.com/shots/11506979-Howl-s-Moving-Castle-UI-Design-Concept
+  - For the font
+- https://dribbble.com/shots/3148783-Fate-Stay-Night-Apple-TV-UI
+  - For the gradient
+- https://dribbble.com/shots/19965902-Netflix-Original-Promo-Cyberpunk-Page
+  - For the non-personal feeling
+- https://dribbble.com/shots/19280006-Bosshe-Car-Shop-Landing-Page
+  - For the shop layout
+- https://dribbble.com/shots/19698106-Potential-Motors-Website
+  - For the scaling
+- https://dribbble.com/shots/19532520-Car-automobile-vehicles-website
+  - For the colors
 
 ## **Commit Conventions**
 **Feat** or ✨: _Describes a feature_
