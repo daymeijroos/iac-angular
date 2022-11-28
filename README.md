@@ -36,6 +36,33 @@ The industrial giant will be called: **Industrial Automaton Corporation** or **I
 - https://dribbble.com/shots/19532520-Car-automobile-vehicles-website
   - For the colors
 
+## Products
+GATHER
+- CROFTER_MK5.1
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-bulldoser.jpg
+- MINER_MK5.0
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-20200303-190709.jpg
+
+TRANSPORT
+- BARGE_MK1.2
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-flyingbardge03.jpg
+- WALKER_MK1.1
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-20200627-001407.jpg
+- WALKER_MK2.0
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-20200303-190709.jpg
+- STROLLER_MK1.2
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-transportwalker03-planet-sm.jpg
+
+MAINTENANCE
+- SOLDER_MK15
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-gorilla.jpg
+  - BUILDER_MK2.0
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-deserttraider.jpg
+
+SPORT
+- RACER_MK1.5
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-speeder02.jpg
+
 ## **Commit Conventions**
 **Feat** or ✨: _Describes a feature_
 
