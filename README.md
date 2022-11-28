@@ -5,12 +5,12 @@ _By Day_
 
 This is a web-shop school project with Angular.
 It will be a robot company set in a painted world.
-The industrial giant will be called: **Industrial Automaton Coorporation** or **IAC** for short
+The industrial giant will be called: **Industrial Automaton Corporation** or **IAC** for short
 
 ## Sources
 - https://www.geek-art.net/portfolio-hamish-frater/
 - https://www.artstation.com/hamfish
-  - Source for images
+  - Images
 - https://fonts.google.com/specimen/Alexandria
   - Main font
 - https://fonts.google.com/specimen/Kanit
