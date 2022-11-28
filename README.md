@@ -41,7 +41,7 @@ GATHER
 - CROFTER_MK5.1
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-bulldoser.jpg
 - MINER_MK5.0
-  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-20200303-190709.jpg
+  - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-machine01-portrait-final.jpg
 
 TRANSPORT
 - BARGE_MK1.2
@@ -56,7 +56,7 @@ TRANSPORT
 MAINTENANCE
 - SOLDER_MK15
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-gorilla.jpg
-  - BUILDER_MK2.0
+- BUILDER_MK2.0
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-deserttraider.jpg
 
 SPORT
