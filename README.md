@@ -42,6 +42,8 @@ GATHER
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-bulldoser.jpg
 - MINER_MK5.0
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-machine01-portrait-final.jpg
+- LUMBERER_MK1.2
+  - https://cdna.artstation.com/p/assets/images/images/016/507/676/large/hamish-frater-lumberjack05.jpg?1552421430
 
 TRANSPORT
 - BARGE_MK1.2
@@ -58,10 +60,24 @@ MAINTENANCE
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-gorilla.jpg
 - BUILDER_MK2.0
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-deserttraider.jpg
+- FUELER_MK2.0
+  - https://cdnb.artstation.com/p/assets/images/images/048/905/113/large/hamish-frater-mediumsalvage02-sm.jpg?1651213744
 
 SPORT
 - RACER_MK1.5
   - https://www.geek-art.net/wp-content/uploads/2021/01/hamish-frater-speeder02.jpg
+
+UPCOMING
+- COOKER_MK0.6
+  - https://cdnb.artstation.com/p/assets/images/images/053/237/045/4k/hamish-frater-cauldron-final.jpg?1661762612
+
+## Pages
+
+Privacy
+- https://cdna.artstation.com/p/assets/images/images/038/789/428/4k/hamish-frater-scoutcar-new.jpg?1624050590
+
+404 page
+- https://cdnb.artstation.com/p/assets/images/images/014/581/181/large/hamish-frater-rv.jpg?1544568447
 
 ## **Commit Conventions**
 **Feat** or ✨: _Describes a feature_
