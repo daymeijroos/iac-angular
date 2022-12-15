@@ -16,6 +16,14 @@ Hoewel IAC's machines de economie voedden en de samenleving in stand hielden, ha
 
 Om de economie draaiende te houden, werd er steeds meer energie verbruikt en werd er steeds meer vervuild. De lucht was vervuild met rook en stof, en de oceanen waren vervuild met plastic en chemicaliën.
 
+Het bedrijf is vooral gefocust op rijke mensen, zij genoten van de voordelen van IAC's machines en de efficiëntie en productiviteit die ze bood.
+
+Ze woonden in luxe huizen en hadden toegang tot de beste voedsel, kleding en vrijetijdsbesteding die de samenleving te bieden had. De vervuiling en milieuverontreiniging had weinig impact op hun levens, aangezien ze de middelen hadden om zich te beschermen en te isoleren van de slechtste gevolgen ervan.
+
+Ze waren tevreden met hun leven en zagen geen reden om te klagen of te protesteren tegen IAC of hun praktijken. Ze profiteerden van de economische groei die IAC's machines mogelijk maakten en hadden geen interesse in verandering.
+
+In feite hadden veel rijke mensen zelfs belangen in IAC en profiteerden ze financieel van het bedrijf en hun machines. Ze waren tevreden met de status quo en zagen geen reden om dingen te veranderen.
+
 ## Sources
 - https://www.geek-art.net/portfolio-hamish-frater/
 - https://www.artstation.com/hamfish
