@@ -7,6 +7,15 @@ This is a web-shop school project with Angular.
 It will be a robot company set in a painted world.
 The industrial giant will be called: **Industrial Automaton Corporation** or **IAC** for short
 
+## Story
+In de toekomst was massaproductie de norm. Reusachtige machines, ontworpen en gebouwd door IAC, domineerden de markt. IAC was de grootste speler in de industrie en produceerde alles, van enorme graafmachines tot vliegende transportschepen.
+
+De samenleving was grotendeels afhankelijk van IAC en hun machines. Landbouw, mijnbouw, transport en bouw waren allemaal afhankelijk van IAC's machines om efficiënt en op grote schaal te kunnen functioneren.
+
+Hoewel IAC's machines de economie voedden en de samenleving in stand hielden, hadden ze ook een keerzijde. De machines waren enorm en verbruikten enorme hoeveelheden energie, wat leidde tot vervuiling en milieuverontreiniging op een schaal die nog nooit eerder was gezien.
+
+Om de economie draaiende te houden, werd er steeds meer energie verbruikt en werd er steeds meer vervuild. De lucht was vervuild met rook en stof, en de oceanen waren vervuild met plastic en chemicaliën.
+
 ## Sources
 - https://www.geek-art.net/portfolio-hamish-frater/
 - https://www.artstation.com/hamfish
