@@ -8,10 +8,6 @@ import { __exportStar } from 'tslib';
   declarations: [],
   imports: [
     CommonModule,
-    ProductService,
-  ],
-  exports: [
-    ProductService,
   ]
 })
 export class ProductModule { }
