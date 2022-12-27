@@ -1,0 +1,29 @@
+<nav>
+  <div class="header_curtain"></div>
+  <div class="header_blur"></div>
+  <section class="general" [ngClass]="{
+    'hide_and_show_on_hover': true
+  }">
+    <ul>
+      <li><a>Privacy</a></li>
+    </ul>
+    <ul>
+      <li><a>Search</a></li>
+      <li>
+        <app-login-button></app-login-button>
+      </li>
+    </ul>
+  </section>
+  <section class="logo">
+    <img src="./assets/img/logo.png" width="60px" [ngClass]="{
+      'big': false
+    }">
+  </section>
+  <section class="products">
+    <ul>
+      <li *ngFor="let category of categories">
+        <a href="{{category}}">{{category}}</a>
+      </li>
+    </ul>
+  </section>
+</nav>
