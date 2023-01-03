@@ -65,10 +65,22 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "WebShop-Ang:build:production"
+              "browserTarget": "WebShop-Ang:build:production",
+              "proxyConfig": "src/proxy.conf.json",
+              "ssl": true,
+              "sslKey": "../key.pem",
+              "sslCert": "../cert.pem",
+              "host": "0.0.0.0",
+              "disableHostCheck": true,
             },
             "development": {
-              "browserTarget": "WebShop-Ang:build:development"
+              "browserTarget": "WebShop-Ang:build:development",
+              "proxyConfig": "src/proxy.conf.json",
+              "ssl": true,
+              "sslKey": "./key.pem",
+              "sslCert": "./cert.pem",
+              "host": "0.0.0.0",
+              "disableHostCheck": true,
             }
           },
           "defaultConfiguration": "development"
