@@ -73,7 +73,7 @@ nav {
 
   section.products, div.header_blur {
     transform: translate3d(0,-100%,0);
-    transition: transform 0.8s cubic-bezier(0.8,0,0,0.8) 0.3s, opacity 0.8s ease-out 0.3s;
+    transition: transform 0.8s cubic-bezier(0.8,0,0,0.8) 0.2s, opacity 0.8s ease-out 0.2s;
   }
 
   &:hover {
