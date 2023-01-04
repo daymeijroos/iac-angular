@@ -5,14 +5,19 @@
   --medium-font: 1.2rem;
   --large-font: 1.4rem;
   --header-font: 2rem;
-}
 
+  --header-font-family: 'Unica One';
+  --normal-font-family: 'Alexandria', sans-serif;
+
+  --text-color: black;
+  --background-color: white;
+}
 
 html, body {
   padding: 0;
   border: 0;
   margin: 0;
-  background-color: dimgrey;
+  background-color: var(--background-color);
 }
 
 ul {
@@ -25,7 +30,7 @@ ul {
   }
 }
 
-a {
-  font-family: 'Alexandria', sans-serif;
+a, button {
+  font-family: var(--normal-font-family);
   font-weight: 200;
 }

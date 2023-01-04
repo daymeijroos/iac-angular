@@ -29,9 +29,31 @@ import { NoopInterceptor } from './noop-interceptor';
       httpInterceptor: {
         allowedList: [
           {
-            uri: 'https://pluto.local:4200/api/*',
+            uri: '/api/category/*',
             tokenOptions: {
               audience: 'http://localhost:8080',
+              allowAnonymous: true
+            }
+          },
+          {
+            uri: '/api/product/*',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              allowAnonymous: true
+            }
+          },
+          {
+            uri: '/api/order',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              allowAnonymous: false
+            }
+          },
+          {
+            uri: '/api/shippingDetails',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              allowAnonymous: false
             }
           },
           {

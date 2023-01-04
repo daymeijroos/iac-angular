@@ -2,11 +2,26 @@ nav {
   position: fixed;
   width: 100vw;
   height: min-content;
+  max-height: 100vh;
 
   display: grid;
-  grid-template-areas: "left center right" "main main main";
+  grid-template-areas: "left center right" "main main main" "sub sub sub";
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: min-content min-content 0;
+
+  &.extended {
+    grid-template-rows: min-content min-content 1fr;
+  }
+
+  &:hover, &.extended {
+    section.categories, div.header_blur {
+      transform: none;
+    }
+
+    section.general.hide_and_show_on_hover {
+      transform: none;
+    }
+  }
 
   div.header_curtain {
     background-color: black;
@@ -19,9 +34,25 @@ nav {
     background-color: rgba(0,0,0,.75);
     grid-area: main;
     z-index: -2;
+    
+    max-height: 100vh;
+
+    &.full {
+      grid-area: main/main/sub/sub;
+    }
   }
 
   section.general {
+    ul {
+      display: flex;
+      column-gap: 3vw;
+      li {
+        a {
+          font-size: var(--small-font);
+        }
+      }
+    }
+    
     padding-top: 0.3rem;
 
     grid-area: left/left/right/right;
@@ -47,9 +78,19 @@ nav {
     justify-self: center;
 
     z-index: 1;
+
+    img {
+      width: 3rem;
+      padding: 10px;
+    
+      &.big {
+        width: 150px;
+        padding: 50px;
+      }
+    }
   }
 
-  section.products {
+  section.categories {
     padding: 0.5rem;
     grid-area: main;
     display: grid;
@@ -57,7 +98,13 @@ nav {
     z-index: -1;
 
     ul {
+      display: flex;
       column-gap: 3vw;
+      li {
+        a {
+          font-size: var(--small-font);
+        }
+      }
     }
 
     a {
@@ -71,36 +118,32 @@ nav {
     }
   }
 
-  section.products, div.header_blur {
+  section.categories, div.header_blur {
     transform: translate3d(0,-100%,0);
     transition: transform 0.8s cubic-bezier(0.8,0,0,0.8) 0.2s, opacity 0.8s ease-out 0.2s;
   }
 
-  &:hover {
-    section.products, div.header_blur {
-      transform: none;
+  section.product_flyout {
+    cursor: zoom-out;
+
+    position: relative;
+    grid-area: sub;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    ng-icon {
+      position: absolute;
+      color: white;
+      top: 1rem;
+      right: 1rem;
     }
 
-    section.general.hide_and_show_on_hover {
-      transform: none;
+    &.hidden {
+      display: none;
     }
-  }
-}
-
-a {
-  font-size: var(--small-font);
-}
-
-ul {
-  display: flex;
-}
-
-img {
-  width: 3rem;
-  padding: 10px;
-
-  &.big {
-    width: 150px;
-    padding: 50px;
   }
 }

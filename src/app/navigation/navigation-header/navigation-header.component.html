@@ -1,6 +1,10 @@
-<nav>
+<nav [ngClass]="{
+  'extended': shownProducts
+}">
   <div class="header_curtain"></div>
-  <div class="header_blur"></div>
+  <div class="header_blur" [ngClass]="{
+    'full': shownProducts
+  }"></div>
   <section class="general" [ngClass]="{
     'hide_and_show_on_hover': true
   }">
@@ -19,11 +23,19 @@
       'big': false
     }">
   </section>
-  <section class="products">
+  <section class="categories">
     <ul>
       <li *ngFor="let category of categories">
-        <a href="{{category.id}}">{{category.name}}</a>
+        <a (click)="showProducts(category.products)" [title]="category.description">{{category.name}}</a>
       </li>
     </ul>
+  </section>
+  <section 
+  (click)="hideProducts()"
+  class="product_flyout" [ngClass]="{
+    'hidden': !shownProducts
+  }">
+    <ng-icon (click)="hideProducts()" name="featherX" size="3rem"></ng-icon>
+    <app-product-navigation-list [products]="shownProducts"></app-product-navigation-list>
   </section>
 </nav>

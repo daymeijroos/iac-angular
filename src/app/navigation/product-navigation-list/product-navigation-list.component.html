@@ -1,0 +1,14 @@
+<section>
+  <ul>
+    <li *ngFor="let product of products">
+      <a [href]="product.name" [title]="product.description">
+        <div>
+          <img [src]="product.imageUrl">
+        </div>
+        <h3>
+          {{product.name}}
+        </h3>
+      </a>
+    </li>
+  </ul>
+</section>

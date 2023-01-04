@@ -12,6 +12,6 @@ export class CategoryService {
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getAll() {
-    return this.http.get<Array<Category>>("https://pluto.local:4200/api/category")
+    return this.http.get<Array<Category>>("/api/category")
   }
 }

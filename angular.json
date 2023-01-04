@@ -66,21 +66,11 @@
           "configurations": {
             "production": {
               "browserTarget": "WebShop-Ang:build:production",
-              "proxyConfig": "src/proxy.conf.json",
-              "ssl": true,
-              "sslKey": "../key.pem",
-              "sslCert": "../cert.pem",
-              "host": "0.0.0.0",
-              "disableHostCheck": true,
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "WebShop-Ang:build:development",
-              "proxyConfig": "src/proxy.conf.json",
-              "ssl": true,
-              "sslKey": "./key.pem",
-              "sslCert": "./cert.pem",
-              "host": "0.0.0.0",
-              "disableHostCheck": true,
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
