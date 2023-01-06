@@ -40,10 +40,13 @@ ul {
       h3 {
         transform: translate3d(0, -150%, 0);
         bottom: -20px;
-        font-size: var(--large-font);
-        font-family: var(--header-font-family);
+        font-size: var(--medium-font);
+        font-family: var(--product-font-family);
         font-weight: 500;
       }
     } 
+  }
+  &:hover {
+    cursor: pointer;
   }
 }

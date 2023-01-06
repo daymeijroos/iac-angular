@@ -1,4 +1,7 @@
 nav {
+  z-index: 10;
+  
+  top: 0;
   position: fixed;
   width: 100vw;
   height: min-content;
@@ -49,6 +52,10 @@ nav {
       li {
         a {
           font-size: var(--small-font);
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -80,12 +87,17 @@ nav {
     z-index: 1;
 
     img {
+      
       width: 3rem;
       padding: 10px;
     
       &.big {
         width: 150px;
         padding: 50px;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -103,6 +115,10 @@ nav {
       li {
         a {
           font-size: var(--small-font);
+          
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

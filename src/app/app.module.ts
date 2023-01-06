@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { NavigationModule } from './navigation/navigation.module';
-import { LandingModule } from './landing/landing.module';
+import { HomeModule } from './home/home.module';
 import { ShippingDetailsModule } from './shipping-details/shipping-details.module';
 import { NoopInterceptor } from './noop-interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,36 +25,44 @@ import { NoopInterceptor } from './noop-interceptor';
     AuthModule.forRoot({
       domain: 'dev-skgyxlvd5wjg8d8m.eu.auth0.com',
       clientId: '5TilhY1AB6suOEdHoNXZsIQb7zHogVlQ',
-      audience: 'https://dev-skgyxlvd5wjg8d8m.eu.auth0.com/api/v2/',
-      scope: 'read:current_user',     
+      audience: 'http://localhost:8080',
+      scope: 'admin:category',     
       httpInterceptor: {
         allowedList: [
           {
-            uri: '/api/category/*',
+            uri: '/api/category',
             tokenOptions: {
               audience: 'http://localhost:8080',
-              allowAnonymous: true
+              allowAnonymous: false,
             }
           },
           {
-            uri: '/api/product/*',
+            uri: '/api/product',
             tokenOptions: {
               audience: 'http://localhost:8080',
-              allowAnonymous: true
+              allowAnonymous: false,
             }
           },
           {
             uri: '/api/order',
             tokenOptions: {
               audience: 'http://localhost:8080',
-              allowAnonymous: false
+              allowAnonymous: false,
             }
           },
           {
             uri: '/api/shippingDetails',
             tokenOptions: {
               audience: 'http://localhost:8080',
-              allowAnonymous: false
+              allowAnonymous: false,
+            }
+          },
+          {
+            uri: '/api/admin/category',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
             }
           },
           {
@@ -68,13 +77,14 @@ import { NoopInterceptor } from './noop-interceptor';
     }),
     CategoryModule,
     NavigationModule,
-    LandingModule,
+    HomeModule,
     ShippingDetailsModule,
     ProductModule,
+    BrowserAnimationsModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })

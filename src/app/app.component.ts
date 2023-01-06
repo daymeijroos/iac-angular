@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
-import { AuthService, User } from '@auth0/auth0-angular';
-import { concatMap, map, tap } from 'rxjs';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +11,14 @@ export class AppComponent implements OnInit {
   title = 'WebShop-Ang';
 
   constructor(public auth: AuthService, private http: HttpClient) {}
-  
-  ngOnInit() {}
+
+  ngOnInit() {
+    console.log("shit")
+    this.http.delete("/api/admin/category", {
+      params: {
+        'prompt': 'consent',
+        "id": "2"
+      }
+    }).subscribe()
+  }
 }

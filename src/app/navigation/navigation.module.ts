@@ -6,8 +6,6 @@ import { ProductNavigationListComponent } from './product-navigation-list/produc
 import { NgIconsModule } from '@ng-icons/core';
 import { featherX } from '@ng-icons/feather-icons';
 
-
-
 @NgModule({
   declarations: [
     NavigationHeaderComponent,

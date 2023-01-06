@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/product/product.interface';
 
 @Component({
   selector: 'app-big-section',
@@ -6,7 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./big-section.component.scss']
 })
 export class BigSectionComponent {
-  @Input() img: String = ""
-  @Input() label: String = ""
-  @Input() header: String = ""
+  @Input() product?: Product;
 }
