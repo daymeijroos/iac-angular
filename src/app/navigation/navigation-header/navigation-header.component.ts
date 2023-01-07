@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { Category } from 'src/app/category/category.interface';
 import { CategoryService } from 'src/app/category/category.service';
@@ -14,7 +15,7 @@ export class NavigationHeaderComponent implements OnInit {
   shownProducts?: Product[];
   
 
-  constructor(private categoryService: CategoryService, private auth: AuthService) {}
+  constructor(private categoryService: CategoryService, private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.categoryService.getAll().subscribe((categories) => {
@@ -28,6 +29,10 @@ export class NavigationHeaderComponent implements OnInit {
 
   hideProducts() {
     this.shownProducts = undefined
+  }
+
+  redirectHome() {
+    this.router.navigate(['/'])
   }
 }
 ​

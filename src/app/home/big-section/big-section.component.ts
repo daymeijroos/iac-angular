@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/product/product.interface';
 
 @Component({
@@ -8,4 +9,11 @@ import { Product } from 'src/app/product/product.interface';
 })
 export class BigSectionComponent {
   @Input() product?: Product;
+
+
+  constructor(private router: Router) {}
+
+  redirectToProduct() {
+    this.router.navigate([this.product?.name])
+  }
 }

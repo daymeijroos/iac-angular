@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/product/product.interface';
 
 @Component({
@@ -8,4 +9,10 @@ import { Product } from 'src/app/product/product.interface';
 })
 export class ProductNavigationListComponent {
   @Input() products?: Product[] = []
+
+  constructor(private router: Router) {}
+
+  redirectToProduct(product: Product) {
+    this.router.navigate([product.name])
+  }
 }

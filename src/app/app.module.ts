@@ -13,6 +13,7 @@ import { HomeModule } from './home/home.module';
 import { ShippingDetailsModule } from './shipping-details/shipping-details.module';
 import { NoopInterceptor } from './noop-interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotFoundModule } from './not-found/not-found.module';
 
 @NgModule({
   declarations: [
@@ -29,20 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       scope: 'admin:category',     
       httpInterceptor: {
         allowedList: [
-          {
-            uri: '/api/category',
-            tokenOptions: {
-              audience: 'http://localhost:8080',
-              allowAnonymous: false,
-            }
-          },
-          {
-            uri: '/api/product',
-            tokenOptions: {
-              audience: 'http://localhost:8080',
-              allowAnonymous: false,
-            }
-          },
           {
             uri: '/api/order',
             tokenOptions: {
@@ -81,6 +68,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShippingDetailsModule,
     ProductModule,
     BrowserAnimationsModule,
+    NotFoundModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },

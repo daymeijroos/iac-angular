@@ -16,4 +16,12 @@ export class ProductService {
       }
     })
   }
+
+  getByName(name: string) {
+    return this.http.get<Array<Product>>("/api/product", {
+      params: {
+        'name': name
+      }
+    })
+  }
 }

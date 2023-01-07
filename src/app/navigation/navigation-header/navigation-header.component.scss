@@ -4,8 +4,7 @@ nav {
   top: 0;
   position: fixed;
   width: 100vw;
-  height: min-content;
-  max-height: 100vh;
+  height: fit-content;
 
   display: grid;
   grid-template-areas: "left center right" "main main main" "sub sub sub";
@@ -13,6 +12,7 @@ nav {
   grid-template-rows: min-content min-content 0;
 
   &.extended {
+    height: 100vh;
     grid-template-rows: min-content min-content 1fr;
   }
 

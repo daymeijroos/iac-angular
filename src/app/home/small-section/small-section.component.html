@@ -1,9 +1,9 @@
 <section>
-  <header>
+  <header (click)="redirectToProduct()">
     <p>{{product?.categoryName}}</p>
     <h1>{{product?.name}}</h1>
   </header>
   <div>
-    <img [src]="product?.imageUrl">
+    <img [src]="product?.imageUrl" (click)="redirectToProduct()">
   </div>
 </section>

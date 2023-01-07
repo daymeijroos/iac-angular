@@ -1,8 +1,8 @@
 <section>
   <header>
-    <p>{{product?.categoryName}}</p>
-    <h1>{{product?.name}}</h1>
-    <a mat-fab extended>
+    <p (click)="redirectToProduct()">{{product?.categoryName}}</p>
+    <h1 (click)="redirectToProduct()">{{product?.name}}</h1>
+    <a mat-fab extended (click)="redirectToProduct()">
       <span>Walk me through it</span>
       <ng-icon name="featherChevronRight" size="0.8rem"></ng-icon>
     </a>
