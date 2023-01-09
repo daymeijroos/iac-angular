@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from 'src/app/cart/cart.service';
+import { CartService } from 'src/app/cart/service/cart.service';
 import { Product } from '../product.interface';
 import { ProductService } from '../service/product.service';
 

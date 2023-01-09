@@ -1,7 +1,19 @@
 import { Product } from "../product/product.interface";
+import { CartType } from "./cart.interface";
 
-export class Cart {
-  private products: Product[] = []
+export class Cart implements CartType {
+  products: Product[] = []
+
+  constructor(cart: CartType) {
+    if (cart) {
+      this.products = cart.products
+    }
+  }
+
+  getProducts(): Product[] {
+    return this.products
+  }
+
 
   addProduct(product: Product) {
     this.products.push(product);
@@ -13,10 +25,6 @@ export class Cart {
 
   clear() {
     this.products = []
-  }
-
-  getProducts(): Product[] {
-    return this.products
   }
 
   getPrice(): number {

@@ -1,0 +1,4 @@
+<section *ngIf="cart | async as myCart">
+  <app-cart-item *ngFor="let product of myCart.getProducts()" [product]="product"></app-cart-item>
+  <button (click)="clearCart()"></button>
+</section>
