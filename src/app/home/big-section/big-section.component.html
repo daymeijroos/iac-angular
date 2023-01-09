@@ -2,7 +2,7 @@
   <header>
     <p (click)="redirectToProduct()">{{product?.categoryName}}</p>
     <h1 (click)="redirectToProduct()">{{product?.name}}</h1>
-    <a mat-fab extended (click)="redirectToProduct()">
+    <a mat-fab extended class="no-select" (click)="redirectToProduct()">
       <span>Walk me through it</span>
       <ng-icon name="featherChevronRight" size="0.8rem"></ng-icon>
     </a>

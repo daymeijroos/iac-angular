@@ -13,6 +13,6 @@ export class ProductNavigationListComponent {
   constructor(private router: Router) {}
 
   redirectToProduct(product: Product) {
-    this.router.navigate([product.name])
+    this.router.navigate(['product', product.name])
   }
 }

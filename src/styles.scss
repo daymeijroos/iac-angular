@@ -47,6 +47,9 @@ $WebShop-Ang-theme: mat.define-light-theme((
 
   --text-color: black;
   --background-color: white;
+  
+  --accent-color: rgb(124, 190, 168);
+  --accent-color-hover: rgb(92, 132, 119);
 }
 
 html, body {
@@ -80,3 +83,14 @@ a, button {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+ng-icon {
+  transform: translate(0, 15%)
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

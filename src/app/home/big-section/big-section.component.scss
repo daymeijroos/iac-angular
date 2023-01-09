@@ -54,7 +54,7 @@ section {
       transition: background-color 0.2s ease, color 0.2s ease;
 
       &:hover {
-        background-color: rgb(124, 190, 168);
+        background-color: var(--accent-color);
         color: white;
       }
     }

@@ -14,6 +14,6 @@ export class BigSectionComponent {
   constructor(private router: Router) {}
 
   redirectToProduct() {
-    this.router.navigate([this.product?.name])
+    this.router.navigate(['product', this.product?.name])
   }
 }
