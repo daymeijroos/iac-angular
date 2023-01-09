@@ -1,0 +1,12 @@
+<article>
+  <figure>
+    <img [src]="product?.imageUrl">
+  </figure>
+  <main>
+    <p>{{product?.categoryName}}</p>
+    <h1>{{product?.name}}</h1>
+    <p>{{product?.description}}</p>
+    <h3>{{product?.price | GYI}}.- <sup>GYI‰</sup></h3>
+    <a mat-fab extended class="no-select" color="primary" (click)="addToCart(product!)">Add to cart</a>
+  </main>
+</article>
