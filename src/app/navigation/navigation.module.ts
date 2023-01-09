@@ -4,7 +4,7 @@ import { NavigationHeaderComponent } from './navigation-header/navigation-header
 import { AuthorizationModule } from '../authorization/authorization.module';
 import { ProductNavigationListComponent } from './product-navigation-list/product-navigation-list.component';
 import { NgIconsModule } from '@ng-icons/core';
-import { featherX } from '@ng-icons/feather-icons';
+import { featherX, featherShoppingCart } from '@ng-icons/feather-icons';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { featherX } from '@ng-icons/feather-icons';
   imports: [
     CommonModule,
     AuthorizationModule,
-    NgIconsModule.withIcons({ featherX })
+    NgIconsModule.withIcons({ featherX, featherShoppingCart })
   ],
   exports: [
     NavigationHeaderComponent

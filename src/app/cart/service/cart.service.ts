@@ -10,13 +10,8 @@ export class CartService {
   private cartSubject: BehaviorSubject<Cart>;
 
   private storeCart(cart: Cart) {
-    console.log("store")
     this.cartSubject.next(cart)
     localStorage.setItem(`cart`, JSON.stringify(cart))
-  }
-
-  private isCart(object: unknown): object is Cart {
-    return object != undefined && typeof object === "object"
   }
 
   constructor() {
@@ -46,7 +41,7 @@ export class CartService {
 
   public clearCart() {
     let cart = this.getCart()
-    cart.clear
+    cart.clear()
     console.log("clear")
     this.storeCart(cart)
   }

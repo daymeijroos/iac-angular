@@ -40,4 +40,8 @@ export class CartItemComponent {
       }
     }
   }
+
+  remove() {
+    this.changeQuantity(0)
+  }
 }

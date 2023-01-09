@@ -34,5 +34,9 @@ export class NavigationHeaderComponent implements OnInit {
   redirectHome() {
     this.router.navigate(['/'])
   }
+
+  redirectToCart() {
+    this.router.navigate(['cart'])
+  }
 }
 ​
