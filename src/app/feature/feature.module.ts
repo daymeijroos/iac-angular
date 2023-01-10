@@ -4,6 +4,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShoppingCartPageModule } from './shopping-cart-page/shopping-cart-page.module';
 import { HomePageModule } from './home-page/home-page.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,9 @@ import { HomePageModule } from './home-page/home-page.module';
   imports: [
     CommonModule,
     SharedModule,
+    MatButtonModule,
     ShoppingCartPageModule,
-    HomePageModule
+    HomePageModule,
   ],
   exports: [
     ProductPageComponent,
