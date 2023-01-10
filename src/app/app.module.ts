@@ -1,24 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AuthModule, AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductModule } from './product/product.module';
-import { CategoryModule } from './category/category.module';
-import { NavigationModule } from './navigation/navigation.module';
-import { HomeModule } from './home/home.module';
-import { ShippingDetailsModule } from './shipping-details/shipping-details.module';
-import { NoopInterceptor } from './noop-interceptor';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NotFoundModule } from './not-found/not-found.module';
+import { NoopInterceptor } from './core/interceptor/noop-interceptor';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { FeatureModule } from './feature/feature.module';
+import { RootComponent } from './core/pages/root-page/root-page.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -62,18 +55,14 @@ import { NotFoundModule } from './not-found/not-found.module';
         ]
       }
     }),
-    CategoryModule,
-    NavigationModule,
-    HomeModule,
-    ShippingDetailsModule,
-    ProductModule,
-    BrowserAnimationsModule,
-    NotFoundModule,
+    CoreModule,
+    FeatureModule,
+    SharedModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true},
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ RootComponent ]
 })
 export class AppModule { }
