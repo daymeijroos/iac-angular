@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../../product/product.interface';
 import { Cart } from '../cart.model';
 
@@ -7,7 +7,7 @@ import { Cart } from '../cart.model';
   providedIn: 'root'
 })
 export class CartService {
-  private cartSubject: BehaviorSubject<Cart>;
+  private cartSubject: BehaviorSubject<Cart>
 
   private storeCart(cart: Cart) {
     this.cartSubject.next(cart)
@@ -33,16 +33,27 @@ export class CartService {
     this.storeCart(cart)
   }
 
+  public changeQuantity(product: Product, quantity: number) {
+    let cart: Cart = this.getCart()
+    cart.changeQuantity(product, quantity)
+    this.storeCart(cart)
+  }
+
   public removeFromCart(product: Product) {
     let cart: Cart = this.getCart()
     cart.removeProduct(product)
     this.storeCart(cart)
   }
 
+  removeAllFromCart(product: Product) {
+    let cart: Cart = this.getCart()
+    cart.removeLineWithProduct(product)
+    this.storeCart(cart)
+  }
+
   public clearCart() {
     let cart = this.getCart()
-    cart.clear()
-    console.log("clear")
+    cart.clearLines()
     this.storeCart(cart)
   }
 }

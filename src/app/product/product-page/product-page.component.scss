@@ -33,6 +33,13 @@ article {
       background-color: var(--accent-color);
       color: var(--background-color);
       
+
+      &.disabled {
+        background-color: var(--background-color);
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+      }
+
       box-shadow: none;
       border-radius: 100vw;
 

@@ -1,7 +1,10 @@
 <article>
   <h1>Shopping Cart</h1>
   <section *ngIf="cart | async as myCart">
-    <app-cart-item *ngFor="let product of myCart?.getProducts()" [product]="product"></app-cart-item>
+    <!--<table mat-table [dataSource]="myCart!.getProducts()">
+
+    </table>-->
+    <app-cart-item *ngFor="let line of myCart?.getLineItems()" [product]="line.product"></app-cart-item>
     <button (click)="clearCart()"></button>
   </section>
 </article>

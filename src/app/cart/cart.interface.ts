@@ -1,5 +1,5 @@
-import { Product } from "../product/product.interface";
+import { LineItem } from "../line-item/line-item.entity";
 
 export interface CartType {
-  products: Product[]
+  lineItems: LineItem[]
 }
