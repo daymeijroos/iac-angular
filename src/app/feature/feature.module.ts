@@ -20,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
   exports: [
     ProductPageComponent,
     ShoppingCartPageModule,
-    HomePageModule
+    HomePageModule,
   ]
 })
 export class FeatureModule { }
