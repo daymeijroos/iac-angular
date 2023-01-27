@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LineItem } from 'src/app/core/entities/line-item/line-item.model';
 import { Product } from 'src/app/core/entities/product/product.interface';
 import { CartService } from '../../../core/entities/cart/cart.service';
 
@@ -7,7 +8,7 @@ import { CartService } from '../../../core/entities/cart/cart.service';
   styleUrls: ['./cart-list.component.scss']
 })
 export class CartListComponent {
-  displayedColumns: string[] = ['imageUrl', 'name', 'quantity', 'price', 'remove']
+  displayedColumns: string[] = ['image', 'name', 'quantity', 'price', 'remove']
   cart;
 
   constructor(private cartService: CartService) {
@@ -20,5 +21,20 @@ export class CartListComponent {
 
   changeQuantity(product: Product, quantity: number) {
     this.cartService.changeQuantity(product, quantity)
+  }
+
+  change(event: Event, line: LineItem) {
+    const target = event.target as HTMLInputElement
+    const quantity = Number(target.value)
+
+    if (quantity > 0) {
+      this.changeQuantity(line.product, quantity)
+    } else { 
+      target.value = line.quantity.toString()
+    }
+  }
+
+  remove(line: LineItem) {
+    this.cartService.removeAllFromCart(line.product)
   }
 }

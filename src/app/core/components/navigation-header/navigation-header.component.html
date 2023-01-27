@@ -9,7 +9,7 @@
     'hide_and_show_on_hover': true
   }">
     <ul>
-      <li><a (click)="hideProducts()">Privacy</a></li>
+      <li><a (click)="hideProducts(); openPrivacyDialog()">Privacy</a></li>
     </ul>
     <ul>
       <li><ng-icon (click)="redirectToCart(); hideProducts()" name="featherShoppingCart" size="1rem" ></ng-icon></li>

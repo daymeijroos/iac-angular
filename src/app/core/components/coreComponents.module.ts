@@ -5,15 +5,21 @@ import { ProductNavigationListComponent } from './product-navigation-list/produc
 import { NgIconsModule } from '@ng-icons/core';
 import { featherX, featherShoppingCart } from '@ng-icons/feather-icons';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PrivacyDialogComponent } from './privacy-dialog/privacy-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     NavigationHeaderComponent,
-    ProductNavigationListComponent
+    ProductNavigationListComponent,
+    PrivacyDialogComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    MatDialogModule,
+    MatButtonModule,
     NgIconsModule.withIcons({ featherX, featherShoppingCart }),
   ],
   exports: [

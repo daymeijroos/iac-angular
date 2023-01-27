@@ -45,6 +45,6 @@ export class ProductPageComponent implements OnInit {
   }
 
   removeFromCart(product: Product) {
-    this.cartService.removeFromCart(product)
+    this.cartService.removeAllFromCart(product)
   }
 }

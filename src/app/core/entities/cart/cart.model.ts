@@ -20,7 +20,7 @@ export class Cart implements CartType {
   }
 
 
-  getPrice(): number {
+  getTotal(): number {
     let price = 0;
     for (const lineItem of this.lineItems) {
       price += lineItem.product.price * lineItem.quantity
@@ -56,7 +56,7 @@ export class Cart implements CartType {
 
   changeQuantity(product: Product, quantity: number) {
     if (quantity < 1) {
-      this.removeProduct(product)
+      this.removeLineWithProduct(product)
       return
     }
     this.lineItems.forEach((lineItem) => {

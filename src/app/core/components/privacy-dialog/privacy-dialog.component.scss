@@ -1,0 +1,11 @@
+article { 
+  h1 {
+    font-size: var(--medium-font);
+  }
+  margin: 1em;
+  
+  button {
+    font-size: var(--small-font);
+    width: 20em;
+  }
+}

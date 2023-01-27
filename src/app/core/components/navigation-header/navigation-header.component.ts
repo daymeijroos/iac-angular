@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { Category } from 'src/app/core/entities/category/category.interface';
 import { CategoryService } from 'src/app/core/entities/category/category.service';
 import { Product } from 'src/app/core/entities/product/product.interface';
+import { PrivacyDialogComponent } from '../privacy-dialog/privacy-dialog.component';
 
 @Component({
   selector: 'app-navigation-header',
@@ -15,7 +17,7 @@ export class NavigationHeaderComponent implements OnInit {
   shownProducts?: Product[];
   
 
-  constructor(private categoryService: CategoryService, private auth: AuthService, private router: Router) {}
+  constructor(private categoryService: CategoryService, private auth: AuthService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.categoryService.getAll().subscribe((categories) => {
@@ -37,6 +39,10 @@ export class NavigationHeaderComponent implements OnInit {
 
   redirectToCart() {
     this.router.navigate(['cart'])
+  }
+
+  openPrivacyDialog() {
+    this.dialog.open(PrivacyDialogComponent)
   }
 }
 ​
