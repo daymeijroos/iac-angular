@@ -44,6 +44,6 @@
     <h3>Total: {{myCart!.getTotal() | GYI}} GYI‰</h3>
     <p>Delivery is on us</p>
     <mat-divider></mat-divider>
-    <button mat-flat-button color="primary">Checkout</button>
+    <button mat-flat-button color="primary" (click)="checkout()">Checkout</button>
   </aside>
 </article>

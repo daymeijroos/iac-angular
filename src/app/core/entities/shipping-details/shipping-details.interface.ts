@@ -1,13 +1,11 @@
 import { Country } from "./country.enum";
 
 export interface ShippingDetails {
-  id: String;
-  user_id: String;
-  firstName: String;
-  lastName: String;
-  phone: String;
+  firstName: string;
+  lastName: string;
+  phone: string;
   country: Country;
-  city: String;
-  postalCode: String;
-  address: String;
+  city: string;
+  postalCode: string;
+  address: string;
 }

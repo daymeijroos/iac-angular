@@ -1,0 +1,11 @@
+<article>
+  <ng-template #loggedOut>
+    <section>
+      <button id="login" mat-raised-button color="primary" #loggedOut>Log in / Register</button>
+      <button id="guest" mat-stroked-button #loggedOut (click)="continueAsGuest()">Or continue as guest</button>
+    </section>
+  </ng-template>
+  <ng-container *ngIf="(auth.isAuthenticated$ | async) || guest; else loggedOut">
+    <app-shipping-details-form></app-shipping-details-form>
+  </ng-container>
+</article>

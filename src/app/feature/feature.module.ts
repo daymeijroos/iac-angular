@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ShoppingCartPageModule } from './shopping-cart-page/shopping-cart-page.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MatButtonModule } from '@angular/material/button';
+import { OrderPageModule } from './order-page/order-page.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     ShoppingCartPageModule,
     HomePageModule,
+    OrderPageModule,
   ],
   exports: [
     ProductPageComponent,
