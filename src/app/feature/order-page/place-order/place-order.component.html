@@ -1,0 +1,28 @@
+<mat-stepper linear #stepper [selectedIndex]="(auth.isAuthenticated$ | async)? 1 : 0">
+  <mat-step label="start" [completed]="true">
+    <section>
+      <button id="login" mat-flat-button color="primary" (click)="login()" #loggedOut>Log in / Register</button>
+      <button id="guest" mat-stroked-button #loggedOut (click)="continueAsGuest()">Or continue as guest</button>
+    </section>
+  </mat-step>
+
+  <mat-step label="Shipping Details" [completed]="shippingDetails ? true : false">
+    <app-shipping-details-form [shippingDetails]="shippingDetails" (submitEvent)="setShippingDetails($event)"></app-shipping-details-form>
+  </mat-step>
+
+  <mat-step label="Payment options" [completed]="paymentMethod ? true : false">
+    <label id="example-radio-group-label">Pick your payment provider</label>
+    <mat-radio-group (change)="setPaymentMethod($event.value)">
+      <mat-radio-button class="example-radio-button" *ngFor="let season of PaymentMethod | keyvalue" [value]="season.value">
+        {{season.key}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button matStepperNext mat-flat-button color="primary" type="submit" [disabled]="!paymentMethod">Submit</button>
+  </mat-step>
+
+  <mat-step label="Confirmation">
+    <app-shipping-details-overview [shippingDetails]="shippingDetails"></app-shipping-details-overview>
+    <app-order-overview [cart]="cart"></app-order-overview>
+    <button mat-flat-button color="primary" (click)="placeOrder()">Pay with {{ paymentMethod }}</button>
+  </mat-step>
+</mat-stepper>

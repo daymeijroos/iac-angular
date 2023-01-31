@@ -1,3 +1,5 @@
+import { SharedModule } from './../../shared/shared.module'
+import { MatTableModule } from '@angular/material/table'
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShippingDetailsFormComponent } from './shipping-details-form/shipping-details-form.component';
@@ -6,14 +8,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { OrderMenuComponent } from './order-menu/order-menu.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatRadioModule } from '@angular/material/radio';
+import { ShippingDetailsOverviewComponent } from './shipping-details-overview/shipping-details-overview.component';
+import { OrderOverviewComponent } from './order-overview/order-overview.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
+import { MatListModule } from '@angular/material/list';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 
 
 @NgModule({
   declarations: [
     ShippingDetailsFormComponent,
-    OrderMenuComponent
+    ShippingDetailsOverviewComponent,
+    OrderOverviewComponent,
+    PlaceOrderComponent,
+    ConfirmationPageComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +32,16 @@ import { OrderMenuComponent } from './order-menu/order-menu.component';
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
+    MatTableModule,
+    MatListModule,
+    MatStepperModule,
+    MatRadioModule,
     ReactiveFormsModule,
+    SharedModule
+  ],
+  exports: [
+    PlaceOrderComponent,
+    ConfirmationPageComponent
   ]
 })
 export class OrderPageModule { }

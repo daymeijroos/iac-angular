@@ -1,60 +1,60 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ShippingDetails } from 'src/app/core/entities/shipping-details/shipping-details.interface';
-import { ShippingDetailsModel } from 'src/app/core/entities/shipping-details/shipping-details.model';
-import { ShippingDetailsService } from 'src/app/core/entities/shipping-details/shipping-details.service';
-import { Country, CountryDisplay, } from 'src/app/core/entities/shipping-details/country.enum';
-import { AuthService } from '@auth0/auth0-angular';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core'
+import { FormBuilder, FormControl, Validators } from '@angular/forms'
+import { ShippingDetails } from 'src/app/core/entities/shipping-details/shipping-details.interface'
+import { ShippingDetailsModel } from 'src/app/core/entities/shipping-details/shipping-details.model'
+import { ShippingDetailsService } from 'src/app/core/entities/shipping-details/shipping-details.service'
+import { Country, CountryDisplay, } from 'src/app/core/entities/shipping-details/country.enum'
+import { AuthService } from '@auth0/auth0-angular'
 
 @Component({
   selector: 'app-shipping-details-form',
   templateUrl: './shipping-details-form.component.html',
   styleUrls: ['./shipping-details-form.component.scss']
 })
-export class ShippingDetailsFormComponent implements OnInit {
-  constructor(private shippingDetailsService: ShippingDetailsService, private fb: FormBuilder, public auth: AuthService) {}
+export class ShippingDetailsFormComponent  implements OnChanges {
+  constructor(private fb: FormBuilder, public auth: AuthService) {}
+  @Input() shippingDetails?: ShippingDetails;
+  @Output() submitEvent = new EventEmitter<ShippingDetails>()
 
   countries = CountryDisplay
 
-  shippingDetails = this.fb.group({
-    firstName: [''],
-    lastName: [''],
+  shippingDetailsForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     phone: [''],
-    country: [''],
-    city: [''],
-    address: [''],
-    postalCode: [''],
+    country: ['', Validators.required],
+    city: ['', Validators.required],
+    address: ['', Validators.required],
+    postalCode: ['', Validators.required],
   }, {validators: Validators.required});
 
-  firstName = this.shippingDetails.controls.firstName;
-
-  ngOnInit() {
-    this.shippingDetailsService.get().subscribe(result => {
-      if (typeof result === "string") return;
-      result = result as ShippingDetailsModel;
-      this.shippingDetails.patchValue({
-        firstName: result.firstName,
-        lastName: result.lastName,
-        phone: result.phone,
-        country: result.country,
-        city: result.city,
-        address: result.address,
-        postalCode: result.postalCode,
-      });
-    });
+  ngOnChanges() {
+    if (this.shippingDetails) {
+      this.shippingDetailsForm.patchValue({
+        firstName: this.shippingDetails.firstName,
+        lastName: this.shippingDetails.lastName,
+        phone: this.shippingDetails.phone,
+        country: this.shippingDetails.country,
+        city: this.shippingDetails.city,
+        address: this.shippingDetails.address,
+        postalCode: this.shippingDetails.postalCode,
+      })
+    }
   }
 
-  onSubmit() {
-    if (this.shippingDetails.valid) {
+  submit() {
+    if (this.shippingDetailsForm.valid) {
       const shippingDetails: ShippingDetails = {
-        firstName: this.shippingDetails.value.firstName!,
-        lastName: this.shippingDetails.value.lastName!,
-        phone: this.shippingDetails.value.phone!,
-        country: this.shippingDetails.value.country! as Country,
-        city: this.shippingDetails.value.city!,
-        postalCode: this.shippingDetails.value.postalCode!,
-        address: this.shippingDetails.value.address!,
+        firstName: this.shippingDetailsForm.value.firstName!,
+        lastName: this.shippingDetailsForm.value.lastName!,
+        phone: this.shippingDetailsForm.value.phone!,
+        country: this.shippingDetailsForm.value.country! as Country,
+        city: this.shippingDetailsForm.value.city!,
+        postalCode: this.shippingDetailsForm.value.postalCode!,
+        address: this.shippingDetailsForm.value.address!,
       }
+
+      this.submitEvent.emit(shippingDetails)
     }
   }
 }

@@ -1,4 +1,6 @@
+import { PlaceOrderComponent } from './../../order-page/place-order/place-order.component'
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LineItem } from 'src/app/core/entities/line-item/line-item.model';
 import { Product } from 'src/app/core/entities/product/product.interface';
@@ -12,7 +14,7 @@ export class CartListComponent {
   displayedColumns: string[] = ['image', 'name', 'quantity', 'price', 'remove']
   cart;
 
-  constructor(private cartService: CartService, private router: Router) {
+  constructor(private cartService: CartService, private router: Router, private dialog: MatDialog) {
     this.cart = cartService.getCartObservable()
   }
 
@@ -40,6 +42,6 @@ export class CartListComponent {
   }
 
   checkout() {
-    this.router.navigate(['/order'])
+    this.dialog.open(PlaceOrderComponent)
   }
 }

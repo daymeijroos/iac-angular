@@ -4,7 +4,7 @@ import { ShippingDetails } from "./shipping-details.interface";
 export class ShippingDetailsModel implements ShippingDetails {
   firstName: string;
   lastName: string;
-  phone: string;
+  phone?: string;
   country: Country;
   city: string;
   postalCode: string;
