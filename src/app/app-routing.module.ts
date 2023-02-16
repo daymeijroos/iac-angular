@@ -1,3 +1,6 @@
+import { AdminCategoryPageComponent } from './feature/admin-page/admin-category-page/admin-category-page.component'
+import { AdminGuard } from './feature/admin-page/admin-guard'
+import { AuthGuard } from '@auth0/auth0-angular'
 import { ConfirmationPageComponent } from './feature/order-page/confirmation-page/confirmation-page.component'
 import { PlaceOrderComponent } from './feature/order-page/place-order/place-order.component'
 import { NgModule } from '@angular/core';
@@ -7,6 +10,7 @@ import { CartListComponent } from './feature/shopping-cart-page/cart-list/cart-l
 import { HomeComponent } from './feature/home-page/home/home.component';
 import { ProductPageComponent } from './feature/product-page/product-page.component';
 import { NotFoundComponent } from './core/pages/not-found-page/not-found.component';
+import { AdminPageComponent } from './feature/admin-page/admin-page/admin-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +19,8 @@ const routes: Routes = [
   { path: 'cart', component: CartListComponent},
   { path: 'order', component: PlaceOrderComponent},
   { path: 'success/:orderNumber', component: ConfirmationPageComponent },
+  { path: 'admin/category', component: AdminCategoryPageComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: '**', redirectTo: '404', pathMatch: 'full' },
   { path: '404', component: NotFoundComponent},
 ];

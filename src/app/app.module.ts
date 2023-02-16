@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { FeatureModule } from './feature/feature.module';
 import { RootComponent } from './core/pages/root-page/root-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminPageModule } from './feature/admin-page/admin-page.module';
 
 
 @NgModule({
@@ -48,6 +49,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             }
           },
           {
+            uri: '/api/admin/isAdmin',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
+            }
+          },
+          {
+            uri: '/api/admin/category',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
+            }
+          },
+          {
+            uri: '/api/admin/category/*',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
+            }
+          },
+          {
             uri: 'https://dev-skgyxlvd5wjg8d8m.eu.auth0.com/api/v2/*',
             tokenOptions: {
               audience: 'https://dev-skgyxlvd5wjg8d8m.eu.auth0.com/api/v2/',
@@ -60,6 +85,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     FeatureModule,
     SharedModule,
+    AdminPageModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },

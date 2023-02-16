@@ -1,0 +1,16 @@
+<!-- instead of list use a card-->
+
+<article>
+  <h1>Admin Category Page</h1>  
+  <mat-card *ngFor="let category of categories">
+    <mat-card-header>
+      <mat-card-title>{{category.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{category.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="deleteCategory(category)">Delete Category</button>
+    </mat-card-actions>
+  </mat-card>
+</article>

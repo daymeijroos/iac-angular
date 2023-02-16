@@ -26,7 +26,7 @@
   <section class="categories">
     <ul>
       <li *ngFor="let category of categories">
-        <a (click)="showProducts(category.products)" [title]="category.description">{{category.name}}</a>
+        <a (click)="showProducts(category.products!)" [title]="category.description">{{category.name}}</a>
       </li>
     </ul>
   </section>
