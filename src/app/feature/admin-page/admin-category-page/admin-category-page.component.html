@@ -1,16 +1,27 @@
-<!-- instead of list use a card-->
+<!-- a list of all categories with the option to edit and delete them in a table with angular material-->
 
 <article>
   <h1>Admin Category Page</h1>  
-  <mat-card *ngFor="let category of categories">
-    <mat-card-header>
-      <mat-card-title>{{category.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{category.description}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="deleteCategory(category)">Delete Category</button>
-    </mat-card-actions>
-  </mat-card>
+  <table mat-table [dataSource]="categories">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> 
+        <h1>Categories</h1> </mat-header-cell>
+      <mat-cell *matCellDef="let category"> {{category.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let category">
+        <button mat-stroked-button (click)="edit(category)">Edit</button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let category">
+        <button mat-flat-button color="warn" (click)="delete(category)">Delete</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="['name', 'edit', 'delete']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['name', 'edit', 'delete'];"></mat-row>
+  </table>
+  <button mat-flat-button color="primary" (click)="create()">Add</button>
 </article>

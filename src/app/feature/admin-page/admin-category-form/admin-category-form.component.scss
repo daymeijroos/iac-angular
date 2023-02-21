@@ -1,0 +1,22 @@
+article {
+  padding: 3rem;
+  
+  h2 {
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    align-items: baseline;
+    margin-top: 4rem;
+
+    .buttons {
+      grid-column: 1 / 3;
+      text-align: right;
+    }
+  }
+
+
+}
