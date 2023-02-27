@@ -11,6 +11,7 @@ import { HomeComponent } from './feature/home-page/home/home.component';
 import { ProductPageComponent } from './feature/product-page/product-page.component';
 import { NotFoundComponent } from './core/pages/not-found-page/not-found.component';
 import { AdminPageComponent } from './feature/admin-page/admin-page/admin-page.component';
+import { AdminProductPageComponent } from './feature/admin-page/admin-product-page/admin-product-page.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'order', component: PlaceOrderComponent},
   { path: 'success/:orderNumber', component: ConfirmationPageComponent },
   { path: 'admin/category', component: AdminCategoryPageComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin/product', component: AdminProductPageComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: '**', redirectTo: '404', pathMatch: 'full' },
   { path: '404', component: NotFoundComponent},

@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatTableModule } from '@angular/material/table'
@@ -11,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { AdminCategoryFormComponent } from './admin-category-form/admin-category-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { AdminProductPageComponent } from './admin-product-page/admin-product-page.component';
+import { AdminProductFormComponent } from './admin-product-form/admin-product-form.component';
 
 
 
@@ -18,7 +21,9 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AdminPageComponent,
     AdminCategoryPageComponent,
-    AdminCategoryFormComponent
+    AdminCategoryFormComponent,
+    AdminProductPageComponent,
+    AdminProductFormComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
+    RouterModule,
   ]
 })
 export class AdminPageModule { }

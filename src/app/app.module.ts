@@ -41,14 +41,6 @@ import { AdminPageModule } from './feature/admin-page/admin-page.module';
             }
           },
           {
-            uri: '/api/admin/category',
-            tokenOptions: {
-              audience: 'http://localhost:8080',
-              scope: 'admin:category',
-              allowAnonymous: false,
-            }
-          },
-          {
             uri: '/api/admin/isAdmin',
             tokenOptions: {
               audience: 'http://localhost:8080',
@@ -66,6 +58,22 @@ import { AdminPageModule } from './feature/admin-page/admin-page.module';
           },
           {
             uri: '/api/admin/category/*',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
+            }
+          },
+          {
+            uri: '/api/admin/product',
+            tokenOptions: {
+              audience: 'http://localhost:8080',
+              scope: 'admin:category',
+              allowAnonymous: false,
+            }
+          },
+          {
+            uri: '/api/admin/product/*',
             tokenOptions: {
               audience: 'http://localhost:8080',
               scope: 'admin:category',

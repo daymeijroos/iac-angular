@@ -25,7 +25,7 @@ export class ProductPageComponent implements OnInit {
   }
 
   setProduct() {
-    this.productService.getByName(this.productName!).subscribe({
+    this.productService.legacyGetByName(this.productName!).subscribe({
       next: (product) => {
         this.product = product[0]
         this.cartService.getCartObservable().subscribe((cart) => {

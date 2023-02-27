@@ -14,10 +14,10 @@ export class HomeComponent implements OnInit {
   featured?: Product[]
 
   ngOnInit(): void {
-    this.productService.getByFilter(ProductFilter.LANDING).subscribe((response) => {
+    this.productService.legacyGetByFilter(ProductFilter.LANDING).subscribe((response) => {
       this.landing = response[0]
     });
-    this.productService.getByFilter(ProductFilter.FEATURED).subscribe((response) => {
+    this.productService.legacyGetByFilter(ProductFilter.FEATURED).subscribe((response) => {
       this.featured = response
     });
   }

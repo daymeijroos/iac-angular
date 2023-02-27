@@ -1,3 +1,5 @@
+import { ProductFilter } from "./product-filter.enum"
+
 export interface Product {
   id: string
   name: string
@@ -6,4 +8,5 @@ export interface Product {
   imageUrl: string
   categoryId: string
   categoryName: string
+  filter: ProductFilter
 }
