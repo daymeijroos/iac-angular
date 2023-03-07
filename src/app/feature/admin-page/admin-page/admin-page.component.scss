@@ -4,4 +4,25 @@ article {
   min-height: 100vh;
 
   background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: var(--large-font);
+    margin-bottom: 0;
+  }
+
+  nav {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    button {
+      width: 20rem;
+      height: 4rem;
+    }
+  }
 }

@@ -13,8 +13,8 @@
   <mat-step label="Payment options" [completed]="paymentMethod ? true : false">
     <label id="example-radio-group-label">Pick your payment provider</label>
     <mat-radio-group (change)="setPaymentMethod($event.value)">
-      <mat-radio-button class="example-radio-button" *ngFor="let season of PaymentMethod | keyvalue" [value]="season.value">
-        {{season.key}}
+      <mat-radio-button class="example-radio-button" *ngFor="let paymentMethod of PaymentMethod | keyvalue" [value]="paymentMethod.value">
+        {{paymentMethod.key}}
       </mat-radio-button>
     </mat-radio-group>
     <button matStepperNext mat-flat-button color="primary" type="submit" [disabled]="!paymentMethod">Submit</button>

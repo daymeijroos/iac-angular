@@ -1,7 +1,12 @@
 <article>
-  <h1>Admin Page</h1>
-
+  <h1>Welcome to the Admin Page</h1>
+  <p>
+    What would you like to do?
+  </p>
   <!--a couple big buttons with angular material that redirect to /admin/category and /admin/product-->
-  <button mat-flat-button color="primary" routerLink="/admin/category">Categories</button>
-  <button mat-flat-button color="primary" routerLink="/admin/product">Products</button>
+  <nav>
+    <button mat-flat-button color="primary" routerLink="/admin/category">Edit categories list</button>
+    <button mat-flat-button color="primary" routerLink="/admin/product">Edit products list</button>
+    <button mat-flat-button color="primary" routerLink="/admin/order">See all orders</button>
+  </nav>
 </article>
