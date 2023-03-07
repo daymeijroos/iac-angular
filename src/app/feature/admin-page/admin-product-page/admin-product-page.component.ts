@@ -20,6 +20,7 @@ export class AdminProductPageComponent {
   create() {
     this.dialog.open(AdminProductFormComponent)
   }
+  
   edit(product: Product) {
     this.dialog.open(AdminProductFormComponent, {
       data: product

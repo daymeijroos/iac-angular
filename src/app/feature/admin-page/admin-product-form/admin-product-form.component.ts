@@ -1,4 +1,3 @@
-import { ReversePaymentMethod } from './../../../core/entities/order/payment-method.enum'
 import { ProductService } from './../../../core/entities/product/product.service'
 import { Product } from './../../../core/entities/product/product.interface'
 import { Component, Inject } from '@angular/core';
@@ -6,9 +5,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Category } from 'src/app/core/entities/category/category.interface';
 import { CategoryService } from 'src/app/core/entities/category/category.service';
-import { AdminCategoryPageComponent } from '../admin-category-page/admin-category-page.component';
 import { ProductFilter, ReverseProductFilter } from 'src/app/core/entities/product/product-filter.enum';
 import { Observable } from 'rxjs';
+import { AdminProductPageComponent } from '../admin-product-page/admin-product-page.component';
 
 @Component({
   selector: 'app-admin-product-form',
@@ -16,10 +15,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./admin-product-form.component.scss']
 })
 export class AdminProductFormComponent {
-
   productFilters = ReverseProductFilter
-
-  categories: Observable<Category[]>;
+  categories: Observable<Array<Category>>;
 
   productForm = this.fb.group({
     name: ['', Validators.required],
@@ -30,15 +27,16 @@ export class AdminProductFormComponent {
     category: ['', Validators.required],
   }, {validators: Validators.required})
 
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<AdminCategoryPageComponent>, private categoryService: CategoryService, private productService: ProductService, @Inject(MAT_DIALOG_DATA) private data?: Product) {
-    if (this.data) {
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<AdminProductPageComponent>, private categoryService: CategoryService, private productService: ProductService, @Inject(MAT_DIALOG_DATA) private data?: Product) {
+    console.log(data)
+    if (data) {
       this.productForm.patchValue({
-        name: this.data.name,
-        description: this.data.description,
-        imageUrl: this.data.imageUrl,
-        price: this.data.price,
-        filter: this.data.filter,
-        category: this.data.categoryId,
+        name: data.name,
+        description: data.description,
+        imageUrl: data.imageUrl,
+        price: data.price,
+        filter: data.filter,
+        category: data.categoryId,
       })
     }
     this.categories = this.categoryService.getAll()
@@ -61,9 +59,9 @@ export class AdminProductFormComponent {
       }
 
       if (this.data) {
-        this.categoryService.edit(product, () => this.dialogRef.close())
+        this.productService.edit(product, () => this.dialogRef.close())
       } else {
-        this.categoryService.create(product, () => this.dialogRef.close())
+        this.productService.create(product, () => this.dialogRef.close())
       }
     }
   }

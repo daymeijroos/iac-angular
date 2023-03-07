@@ -1,3 +1,4 @@
+import { MatSelectModule } from '@angular/material/select'
 import { RouterModule } from '@angular/router'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -36,6 +37,7 @@ import { AdminProductFormComponent } from './admin-product-form/admin-product-fo
     ReactiveFormsModule,
     MatInputModule,
     RouterModule,
+    MatSelectModule
   ]
 })
 export class AdminPageModule { }
