@@ -5,6 +5,7 @@ export class ShippingDetailsModel implements ShippingDetails {
   firstName: string;
   lastName: string;
   phone?: string;
+  email: string;
   country: Country;
   city: string;
   postalCode: string;
@@ -14,6 +15,7 @@ export class ShippingDetailsModel implements ShippingDetails {
     this.firstName = shippingDetails.firstName;
     this.lastName = shippingDetails.lastName;
     this.phone = shippingDetails.phone;
+    this.email = shippingDetails.email;
     this.country = shippingDetails.country;
     this.city = shippingDetails.city;
     this.postalCode = shippingDetails.postalCode;

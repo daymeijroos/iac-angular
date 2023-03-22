@@ -17,18 +17,15 @@ import { PrivacyDialogComponent } from '../privacy-dialog/privacy-dialog.compone
 export class NavigationHeaderComponent implements OnInit {
   categories: Category[] = []
   shownProducts?: Product[]
-  isAdmin: boolean = false;
+  isAdmin: Observable<boolean>;
 
   constructor(private categoryService: CategoryService, private auth: AuthService, private router: Router, private dialog: MatDialog, private adminService: AdminService) {
-
+    this.isAdmin = this.adminService.isAdmin()
   }
   
   ngOnInit(): void {
     this.categoryService.getAll().subscribe((categories) => {
       this.categories = categories
-    })
-    this.adminService.isAdmin().subscribe((isAdmin) => {
-      this.isAdmin = isAdmin
     })
   }
 

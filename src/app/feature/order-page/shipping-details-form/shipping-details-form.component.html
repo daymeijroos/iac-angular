@@ -14,6 +14,12 @@
       <mat-label>Phone <i>(optional)</i></mat-label>
       <input matInput type="tel" placeholder="e.g. 0612345678" [formControl]="shippingDetailsForm.controls.phone" pattern="[0-9]{10}">
     </mat-form-field>  
+        <!-- add email field -->
+    <mat-form-field appearance="outline" id="email">
+      <mat-label>Email <i>(optional)</i></mat-label>
+      <input matInput type="email" placeholder="e.g." [formControl]="shippingDetailsForm.controls.email">
+    </mat-form-field>
+  
 
     <mat-form-field appearance="outline">
       <mat-label>Country</mat-label>
@@ -38,6 +44,8 @@
       <mat-label>Address</mat-label>
       <input matInput required placeholder="City St." type="text" [formControl]="shippingDetailsForm.controls.address">
     </mat-form-field>
+
     <button mat-flat-button color="primary" type="submit" [disabled]="!shippingDetailsForm.valid">Submit</button>
   </form>
+
 </article>

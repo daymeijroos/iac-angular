@@ -12,7 +12,7 @@
       <li><a (click)="hideProducts(); openPrivacyDialog()">Privacy</a></li>
     </ul>
     <ul>
-      <li *ngIf="isAdmin"><ng-icon (click)="redirectToAdmin(); hideProducts()" name="featherTool" size="1rem" ></ng-icon></li>
+      <li *ngIf="isAdmin | async"><ng-icon (click)="redirectToAdmin(); hideProducts()" name="featherTool" size="1rem" ></ng-icon></li>
       <li><ng-icon (click)="redirectToCart(); hideProducts()" name="featherShoppingCart" size="1rem" ></ng-icon></li>
       <li>
         <app-login-button></app-login-button>
