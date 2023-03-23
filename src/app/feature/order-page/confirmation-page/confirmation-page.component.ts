@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./confirmation-page.component.scss']
 })
 export class ConfirmationPageComponent {
-
+  orderStatus = 'In verwerking';
 }

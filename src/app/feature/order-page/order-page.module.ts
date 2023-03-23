@@ -1,3 +1,4 @@
+import { MatCardModule } from '@angular/material/card'
 import { SharedModule } from './../../shared/shared.module'
 import { MatTableModule } from '@angular/material/table'
 import { NgModule } from '@angular/core';
@@ -37,7 +38,8 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
     MatStepperModule,
     MatRadioModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MatCardModule
   ],
   exports: [
     PlaceOrderComponent,

@@ -10,6 +10,7 @@ import { ShippingDetailsService } from 'src/app/core/entities/shipping-details/s
 import { CartService } from 'src/app/core/entities/cart/cart.service';
 import { Cart } from 'src/app/core/entities/cart/cart.model';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-place-order',
@@ -25,7 +26,7 @@ export class PlaceOrderComponent implements OnInit {
   shippingDetails?: ShippingDetails
   paymentMethod?: PaymentMethod
 
-  constructor(public auth: AuthService, private shippingDetailsService: ShippingDetailsService, private cartService: CartService, private orderService: OrderService, private router: Router) {}
+  constructor(public dialogRef: MatDialogRef<PlaceOrderComponent>, public auth: AuthService, private shippingDetailsService: ShippingDetailsService, private cartService: CartService, private orderService: OrderService, private router: Router) {}
 
   ngOnInit() {
     this.auth.isAuthenticated$.subscribe((value) => {
@@ -79,7 +80,8 @@ export class PlaceOrderComponent implements OnInit {
             return
           }
           this.cartService.clearCart()
-          this.router.navigate(["/order", result.id])
+          this.dialogRef.close()
+          this.router.navigate(["/success", result.id])
         }
       )
     }

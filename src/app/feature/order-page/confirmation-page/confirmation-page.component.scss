@@ -1,0 +1,46 @@
+article {
+  background-color: var(--background-color);
+}
+
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.success-card {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 60rem;
+  width: 100%;
+  background-color: var(--accent-color);
+}
+
+mat-card-title {
+  font-size: var(--header-font);
+  font-family: var(--header-font-family);
+  color: var(--background-color);
+  margin-bottom: 1rem;
+}
+
+mat-card-content {
+  width: 20rem;
+  font-family: var(--normal-font-family);
+  font-size: var(--medium-font);
+  line-height: 1.5;
+  color: var(--background-color);
+}
+
+mat-card-content p {
+  margin: 0;
+  padding: 0;
+}
+
+mat-card-content strong {
+  color: var(--accent-color-hover);
+  font-family: var(--normal-font-family);
+}
