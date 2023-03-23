@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item>{{shippingDetails?.firstName}} {{shippingDetails?.lastName}}</mat-list-item>
+  <mat-list-item *ngIf="shippingDetails?.phone">{{ shippingDetails?.phone }}</mat-list-item>
+  <mat-list-item>{{ shippingDetails?.address }}</mat-list-item>
+  <mat-list-item>{{ shippingDetails?.postalCode }} {{shippingDetails?.city}}</mat-list-item>
+  <mat-list-item>{{ shippingDetails?.country }}</mat-list-item>
+</mat-list>

@@ -1,0 +1,17 @@
+article {
+  padding-top: 14vh;
+  width: 100vw;
+  min-height: 100vh;
+
+  background-color: white;
+
+  & > * {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

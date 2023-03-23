@@ -1,0 +1,17 @@
+<article>
+  <h2>Create Category</h2>
+  <form (ngSubmit)="submit()" [formGroup]="categoryForm">
+    <label>Category name</label>
+    <mat-form-field>
+      <input matInput placeholder="Name" [formControl]="categoryForm.controls.name" required="">
+    </mat-form-field>
+    <label>Category description</label>
+    <mat-form-field >
+      <textarea matInput placeholder="Description" [formControl]="categoryForm.controls.description" required></textarea>
+    </mat-form-field>
+    <section class="buttons">
+      <button mat-stroked-button color="primary" type="button" (click)="close()">Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="!categoryForm.valid" type="submit">Done</button>
+    </section>
+  </form>
+</article>

@@ -1,0 +1,18 @@
+article {
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(20rem, 30rem));
+  justify-content: center;
+  column-gap: 10%;
+  padding: 10rem;
+  grid-auto-rows: auto;
+
+  app-small-section {
+    width: 100%;
+    height: min-content;
+  }
+
+  :nth-child(2n+0) {
+    padding-top: 20rem;
+  }
+}

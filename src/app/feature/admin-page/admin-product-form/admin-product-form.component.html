@@ -1,0 +1,40 @@
+<article>
+  <h2>Create Product</h2>
+  <form (ngSubmit)="submit()" [formGroup]="productForm">
+    <mat-label>Product name</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Name" required [formControl]="productForm.controls.name">
+    </mat-form-field>
+    <mat-label>Product description</mat-label>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" required [formControl]="productForm.controls.description"></textarea>
+    </mat-form-field>
+    <mat-label>Product category</mat-label>
+    <mat-form-field>
+      <mat-label>Pick a category</mat-label>
+      <mat-select required [formControl]="productForm.controls.category">
+        <mat-option *ngFor="let category of categories | async" [value]="category.id">{{ category.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-label>Product price</mat-label>
+    <mat-form-field>
+      <input matInput type="number" required [formControl]="productForm.controls.price">
+    </mat-form-field>
+    <mat-label>Product cover image URL</mat-label>
+    <mat-form-field>
+      <input matInput type="text" required [formControl]="productForm.controls.imageUrl">
+    </mat-form-field>
+    <mat-label>Product filter</mat-label>
+    <mat-form-field>
+      <mat-select required [formControl]="productForm.controls.filter">
+        <mat-option *ngFor="let filter of productFilters | keyvalue" [value]="filter.value">
+          {{ filter.key }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <section class="buttons">
+      <button mat-stroked-button color="primary" type="button" (click)="close()">Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="!productForm.valid" type="submit">Done</button>
+    </section>
+  </form>
+</article>

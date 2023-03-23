@@ -1,0 +1,17 @@
+<article>
+  <figure>
+    <img [src]="product?.imageUrl">
+  </figure>
+  <main>
+    <p>{{product?.categoryName}}</p>
+    <h1>{{product?.name}}</h1>
+    <p>{{product?.description}}</p>
+    <div *ngIf="product?.categoryName != 'Upcoming'">
+      <h3>{{product?.price | GYI}}.- <sup>GYI‰</sup></h3>
+      <a *ngIf="!inCart" mat-fab extended class="no-select" (click)="addToCart(product!)">Add to cart</a>
+      <a *ngIf="inCart" mat-fab extended disabled class="no-select disabled">Added!</a>
+      <a *ngIf="inCart" mat-fab extended class="no-select" (click)="removeFromCart(product!)">Remove</a>
+    </div>
+    <a *ngIf="product?.categoryName == 'Upcoming'" mat-fab extended class="no-select">Keep me updated!</a>
+  </main>
+</article>

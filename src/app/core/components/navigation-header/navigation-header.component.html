@@ -1,0 +1,42 @@
+<nav [ngClass]="{
+  'extended': shownProducts
+}">
+  <div class="header_curtain"></div>
+  <div class="header_blur" [ngClass]="{
+    'full': shownProducts
+  }"></div>
+  <section class="general" [ngClass]="{
+    'hide_and_show_on_hover': true
+  }">
+    <ul>
+      <li><a (click)="hideProducts(); openPrivacyDialog()">Privacy</a></li>
+    </ul>
+    <ul>
+      <li *ngIf="isAdmin | async"><ng-icon (click)="redirectToAdmin(); hideProducts()" name="featherTool" size="1rem" ></ng-icon></li>
+      <li><ng-icon (click)="redirectToCart(); hideProducts()" name="featherShoppingCart" size="1rem" ></ng-icon></li>
+      <li>
+        <app-login-button></app-login-button>
+      </li>
+    </ul>
+  </section>
+  <section class="logo">
+    <img src="./assets/img/logo.png" width="60px" (click)="redirectHome()"[ngClass]="{
+      'big': false
+    }">
+  </section>
+  <section class="categories">
+    <ul>
+      <li *ngFor="let category of categories">
+        <a (click)="showProducts(category.products!)" [title]="category.description">{{category.name}}</a>
+      </li>
+    </ul>
+  </section>
+  <section 
+  (click)="hideProducts()"
+  class="product_flyout" [ngClass]="{
+    'hidden': !shownProducts
+  }">
+    <ng-icon (click)="hideProducts()" name="featherX" size="3rem"></ng-icon>
+    <app-product-navigation-list [products]="shownProducts"></app-product-navigation-list>
+  </section>
+</nav>
