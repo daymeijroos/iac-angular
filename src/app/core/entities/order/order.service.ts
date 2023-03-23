@@ -11,7 +11,7 @@ export class OrderService {
   constructor(private http: HttpClient) {}
 
   post(order: Order) {
-    return this.http.post<Order>('http://localhost:4200/api/order', order, {
+    return this.http.post<Order>('/api/order', order, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     })
       .pipe(catchError(error => {
@@ -27,7 +27,7 @@ export class OrderService {
   }
 
   getAll() {
-    return this.http.get<Array<Order>>('http://localhost:4200/api/admin/order')
+    return this.http.get<Array<Order>>('/api/admin/order')
       .pipe(catchError(error => {
         switch(error.status){
           case 403:

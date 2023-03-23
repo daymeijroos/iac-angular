@@ -27,13 +27,6 @@ import { AdminPageModule } from './feature/admin-page/admin-page.module';
       httpInterceptor: {
         allowedList: [
           {
-            uri: '/api/order',
-            tokenOptions: {
-              audience: 'http://localhost:8080',
-              allowAnonymous: false,
-            }
-          },
-          {
             uri: '/api/shippingDetails',
             tokenOptions: {
               audience: 'http://localhost:8080',
