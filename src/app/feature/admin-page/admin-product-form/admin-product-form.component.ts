@@ -28,7 +28,6 @@ export class AdminProductFormComponent {
   }, {validators: Validators.required})
 
   constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<AdminProductPageComponent>, private categoryService: CategoryService, private productService: ProductService, @Inject(MAT_DIALOG_DATA) private data?: Product) {
-    console.log(data)
     if (data) {
       this.productForm.patchValue({
         name: data.name,

@@ -17,7 +17,6 @@ export class AdminGuard implements CanActivate {
 
     return this.adminService.isAdmin().pipe(
       tap(isAdmin => {
-        console.log("isAdmin: " + isAdmin)
         if (!isAdmin) {
           this.auth.loginWithRedirect({ appState: { target: state.url } });
         }
